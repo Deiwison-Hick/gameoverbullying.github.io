@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Jogo Bullying Escolar</title>
+<style>
+  canvas { border: 2px solid black; background: #d0f0c0; display: block; margin: 0 auto; }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+// Personagem principal
+let player = {x: 100, y: 500, width: 50, height: 50, color: "blue"};
+
+// Personagem do bullying
+let bully = {x: 400, y: 500, width: 50, height: 50, color: "red"};
+
+// Perguntas
+let questions = [
+  "Como você reagiria ao bullying?",
+  "Você contaria para um professor?",
+  "Tentaria conversar com a vítima?",
+  "Intervir sozinho é seguro?",
+  "Como prevenir novas situações?",
+  "Qual atitude demonstra empatia?"
+];
+
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  // Cenário simples
+  ctx.fillStyle = "#a3d9ff";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  
+  // Desenha player
+  ctx.fillStyle = player.color;
+  ctx.fillRect(player.x, player.y, player.width, player.height);
+  
+  // Desenha bully
+  ctx.fillStyle = bully.color;
+  ctx.fillRect(bully.x, bully.y, bully.width, bully.height);
+  
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Anti-Bullying</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background: linear-gradient(135deg, #6CC1FF, #3A8DFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .chat-container {
+    background: #fff;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .chat-header {
+    background: #3A8DFF;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .chat-header::after {
+    content: '💬';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5em;
+  }
+
+  .chat-body {
+    flex: 1;
+    padding: 20px;
+    background: #f7f9ff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+  }
+
+  .message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 15px;
+    position: relative;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .message.bot {
+    background: #e0f7fa;
+    align-self: flex-start;
+    color: #00796B;
+  }
+
+  .message.user {
+    background: #c8e6c9;
+    align-self: flex-end;
+    color: #2E7D32;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+
+  .chat-footer {
+    background: #f1f3f6;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .chat-footer button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #3A8DFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .chat-footer button:hover {
+    background: #6CC1FF;
+  }
+
+  .emoji {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 500px){
+    .chat-container{
+      max-width: 95%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">Chat Anti-Bullying</div>
+  <div class="chat-body" id="chatBody">
+    <div class="message bot">Olá! Clique em uma pergunta abaixo e eu vou te responder 💡</div>
+  </div>
+  <div class="chat-footer">
+    <button onclick="ask('O que é bullying?')">O que é bullying?</button>
+    <button onclick="ask('Como combater o bullying?')">Como combater o bullying?</button>
+    <button onclick="ask('Quais são os tipos de bullying?')">Quais são os tipos de bullying?</button>
+    <button onclick="ask('Por que não devemos praticar bullying?')">Por que não devemos praticar bullying?</button>
+    <button onclick="ask('O que fazer se estiver sofrendo bullying?')">O que fazer se estiver sofrendo bullying?</button>
+  </div>
+</div>
+
+<script>
+const chatBody = document.getElementById('chatBody');
+
+function ask(question) {
+  addMessage(question, 'user');
+  setTimeout(() => {
+    addMessage(getAnswer(question), 'bot');
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 800);
+}
+
+function addMessage(text, sender) {
+  const msg = document.createElement('div');
+  msg.classList.add('message', sender);
+  msg.innerHTML = text + (sender === 'bot' ? '<span class="emoji">👏</span>' : '');
+  chatBody.appendChild(msg);
+}
+
+function getAnswer(question) {
+  switch(question) {
+    case 'O que é bullying?':
+      return 'Bullying é qualquer comportamento agressivo, intencional e repetitivo que causa sofrimento físico ou emocional a outra pessoa.';
+    case 'Como combater o bullying?':
+      return 'Para combater o bullying, devemos promover respeito, empatia, denunciar casos, e apoiar vítimas e testemunhas.';
+    case 'Quais são os tipos de bullying?':
+      return 'Existem bullying físico, verbal, social e virtual (cyberbullying). Todos são prejudiciais e devem ser combatidos.';
+    case 'Por que não devemos praticar bullying?':
+      return 'O bullying causa sofrimento, baixa autoestima e problemas emocionais graves. Devemos tratar todos com respeito e empatia.';
+    case 'O que fazer se estiver sofrendo bullying?':
+      return 'Fale com alguém de confiança, busque ajuda de professores, familiares ou profissionais, e não tente enfrentar sozinho.';
+    default:
+      return 'Não sei a resposta para isso 😔, mas vamos aprender juntos!';
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

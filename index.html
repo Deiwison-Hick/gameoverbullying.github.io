@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FECULEMA • Jogo Interativo + Landing Page</title>
+  <meta name="description" content="Landing page gamificada sobre diversidade, inclusão e cultura para a FECULEMA." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content container">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">
+          <!-- Simple geometric logo -->
+          <svg viewBox="0 0 100 100" role="img" aria-label="Logo">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0%" />
+                <stop offset="100%" />
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="46" fill="url(#g)" />
+            <g fill="none" stroke="white" stroke-width="6" stroke-linecap="round">
+              <path d="M25 60 L50 25 L75 60" />
+              <path d="M38 55 L50 40 L62 55" />
+            </g>
+          </svg>
+        </div>
+        <div class="brand__text">
+          <h1>FECULEMA • Jogo Interativo</h1>
+          <p>Inclusão, diversidade e questões étnico raciais na educação básica — em formato de jogo rápido.</p>
+        </div>
+      </div>
+      <a class="cta" href="#jogo">Jogar agora</a>
+    </div>
+    <div class="hero__wave" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Section: Sobre -->
+    <section class="section container" id="sobre">
+      <div class="grid-2">
+        <div>
+          <h2>O Projeto</h2>
+          <p>
+            Esta landing page transforma um tema sério em uma experiência interativa.
+            O mini jogo é baseado em escolhas rápidas e cenários reais do contexto escolar.
+            
+         
+        </div>
+        <div class="card highlight">
+          <h3>Métricas em tempo real</h3>
+          <p id="metricas">0 jogadores • 0 finais bons • 0 finais neutros • 0 finais ruins</p>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Anti-Bullying e Diversidade -->
+    <section class="section container" id="diversidade">
+      <h2>Combate ao Bullying: Respeito à Diversidade</h2>
+      <p>
+        O bullying é um problema sério que afeta pessoas de todas as idades. Ele pode acontecer por motivos de <strong>religião, sexualidade, gênero, raça ou aparência</strong>. Ninguém merece sofrer intimidação, humilhação ou exclusão por ser quem é.
+      </p>
+      <p>
+        O combate ao bullying começa com <strong>educação, empatia e respeito</strong>. Precisamos aprender a valorizar as diferenças, ouvir o outro sem preconceito e construir espaços seguros, seja na escola, no trabalho ou na internet.
+      </p>
+      <h3>Como agir contra o bullying:</h3>
+      <ul class="bullets">
+        <li><strong>Fale e denuncie:</strong> não ignore situações de violência ou preconceito.</li>
+        <li><strong>Apoie a vítima:</strong> pequenas atitudes de solidariedade fazem grande diferença.</li>
+        <li><strong>Eduque sobre diversidade:</strong> entenda e compartilhe informações sobre religiosidade, sexualidade, gênero, raça e cultura.</li>
+        <li><strong>Promova o respeito:</strong> incentive conversas que reforcem a igualdade e a inclusão.</li>
+      </ul>
+      <p>
+        A diversidade é riqueza. Cada pessoa tem o direito de <strong>ser e expressar sua identidade sem medo</strong>. Quando respeitamos nossas diferenças, criamos um mundo mais justo e acolhedor para todos.
+      </p>
+      <p>
+        E para reforçar essa mensagem, aqui no site você pode jogar e aprender sobre <strong>como lidar com o bullying e valorizar a diversidade</strong> de forma divertida e interativa.
+      </p>
+    </section>
+
+    <!-- Section: Jogo -->
+    <section class="section game container" id="jogo" aria-live="polite">
+      <div class="game__header">
+        <h2>Mini Jogo: A Escolha Está em Suas Mãos</h2>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso">
+          <div class="progress__bar" id="progressBar" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="game__viewport" id="viewport">
+        <!-- Conteúdo dinâmico do jogo é injetado aqui -->
+      </div>
+
+      <div class="game__footer">
+        <button id="btnReiniciar" class="ghost" title="Reiniciar jogo">Reiniciar</button>
+        <button id="btnCompartilhar" class="ghost" title="Compartilhar resultado">Compartilhar</button>
+      </div>
+    </section>
+
+    <!-- Section: Creditos -->
+    <section class="section container" id="creditos">
+      <h2>Créditos e Licença</h2>
+      <p>
+        Criado para projetos educacionais FECULEMA.
+      </p>
+    </section>
+  </main>
+
+
+  <!-- Botão falar com o bot -->
+  <button class="cta secondary" onclick="window.location.href='bot.html'">Falar com o Bot</button>
+</div>
+
+
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <p>Feito com HTML • CSS • JS</p>
+      <nav class="footer__nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#jogo">Jogo</a>
+        <a href="#diversidade">Anti-Bullying</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
